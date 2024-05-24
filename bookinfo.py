@@ -86,7 +86,7 @@ def get_detail_bookinfo_by_yes24(url):
 # ------------------------------------------------------------------
 # 메인 함수
 def get_bookinfo(isbn):
-    bookstore = "kyobo"
+    bookstore = "yes24"
 
     if bookstore == "yes24":
         title, link = get_title_by_isbn_from_yes24(isbn)
