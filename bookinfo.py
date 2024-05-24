@@ -26,7 +26,8 @@ def get_detail_bookinfo_by_kyobo(url):
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
 
-    # 세부 정보 페이지에서는 soup.find로 자료를 찾을 수 없ㅇ.ㅁ
+    # 세부 정보 페이지에서는 soup.find로 자료를 찾을 수 없음
+    # 그러나 get_title_by_isbn_from_kyobo(isbn)에서는 잘 읽어옴.
         cover_image = soup.find("div", class_="portrait_img_box.portrait")["src"]
         title = soup.find('span', class_='prod_title').text.strip()
         title_element = soup.find("span", class_="prod_desc").text.strip()
@@ -115,5 +116,5 @@ def get_bookinfo(isbn):
 # ------------------------------------------------------------------
 
 if __name__ == "__main__":
-    isbn = "9788934935759"
+    #isbn = "9788934935759"
     get_bookinfo(isbn)
